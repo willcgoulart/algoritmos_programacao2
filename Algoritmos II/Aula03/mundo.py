@@ -2,6 +2,8 @@
 mundo=[0]*10
 controle=True
 
+#ForEach for i in mundo:
+
 for i in range(0,10):
     mundo[i]=[0]*10
 
@@ -16,6 +18,7 @@ while(controle==True):
     else:
         mundo[n1][n2]=1
         for i in range(0,10):
+            print('Você não acertou tente novamente')
             print(mundo[i])
 
         print("\n")
