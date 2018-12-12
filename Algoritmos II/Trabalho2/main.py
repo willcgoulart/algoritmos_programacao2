@@ -20,8 +20,10 @@ contro=input(' ? ')
 while contro !=4:
     if contro =='1':
         list.inserir(input('Qual o valor ?'))
+        criaLista=False;
     elif contro =='2':
         list.remover(input('Qual o valor ?'))
+        criaLista=False;
     elif contro =='3':
         list.listar()
     elif contro =='4':
@@ -71,6 +73,7 @@ while contro !=4:
                     list2.set_Ultimo(novo_no)
                     #print('ulti ',inicio.get_Dado(),' novo ',novo_no)
         inicio=list2.get_Inicio()
+        criaLista=True;
 
         while inicio.get_Proximo() is not None:
             if(dado<=inicio.get_Dado()):
