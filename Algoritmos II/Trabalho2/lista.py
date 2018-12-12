@@ -111,31 +111,15 @@ class Lista(object):
             print('A lista esta vazia')
 
     def listar(self):
-        # Cria-se uma variavel atual, cont e elementos
         atual = self.get_Inicio()
         cont = 0
         elementos = ""
-        # Verifica se o elemento atual não é None(Null)
         if atual is not None:
-            # Percorre a lista até 'atual' ser None
             while atual is not None:
-                # Soma a variavel 'cont'
                 cont += 1
-                # Variável 'elementos' recebe o conteudo da lista
                 elementos += str(cont) + " - " + atual.get_Dado() + "\n"
-                print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-                # Ao final, a var. 'atual' recebe seu proximo valor
+                #print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
                 atual = atual.get_Proximo()
-            # Imprime a lista
             print('Lista: \n' + elementos)
-            #print('Inicio: ',self.get_Inicio(),' Fim: ',self.get_Ultimo())
         else:
             print('A lista está vazia!')
-
-    def listaEncadeada(self,dado,criarList,lista):
-        if(criarList==False):
-
-            inicio.get_Inicio()
-            #while inicio.get_Proximo() is not None:
-
-        print('Dado: ',dado,' Lista: ',lista)

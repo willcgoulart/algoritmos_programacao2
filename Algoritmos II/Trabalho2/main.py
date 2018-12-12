@@ -39,11 +39,13 @@ while contro !=4:
                     novo_no=No()
                     if(list2.get_Inicio()==None):
                         novo_no.set_Dado(inicio.get_Dado())
+                        novo_no.set_Assinatura(inicio)
                         novo_no.set_UltimoListaEnca(ultimoListaEnca)
                         list2.set_Inicio(novo_no)
                         #print('ini ',inicio.get_Dado(),' novo ',novo_no)
                     elif(list2.get_Ultimo()==None):
                         novo_no.set_Dado(inicio.get_Dado())
+                        novo_no.set_Assinatura(inicio)
                         novo_no.set_UltimoListaEnca(ultimoListaEnca)
                         novo_no.set_Anterior(list2.get_Inicio())
                         list2.get_Inicio().set_Proximo(novo_no)
@@ -51,6 +53,7 @@ while contro !=4:
                         #print('seg ',inicio.get_Dado(),' novo ',novo_no)
                     else:
                         novo_no.set_Dado(inicio.get_Dado())
+                        novo_no.set_Assinatura(inicio)
                         novo_no.set_UltimoListaEnca(ultimoListaEnca)
                         novo_no.set_Anterior(list2.get_Ultimo())
                         list2.get_Ultimo().set_Proximo(novo_no)
@@ -61,6 +64,7 @@ while contro !=4:
                 if(inicio.get_Proximo()==None):
                     novo_no=No()
                     novo_no.set_Dado(inicio.get_Dado())
+                    novo_no.set_Assinatura(inicio)
                     novo_no.set_UltimoListaEnca(ultimoListaEnca)
                     novo_no.set_Anterior(list2.get_Ultimo())
                     list2.get_Ultimo().set_Proximo(novo_no)
@@ -69,17 +73,29 @@ while contro !=4:
         inicio=list2.get_Inicio()
 
         while inicio.get_Proximo() is not None:
-            print('Antes ',inicio.get_Dado())
             if(dado<=inicio.get_Dado()):
-                print(inicio.get_UltimoListaEnca())
-                break
+                if(dado==inicio.get_Dado()):
+                    print('Item consta na lista')
+                    break
+                else:
+                    listInteira=inicio.get_Assinatura()
+                    while dado!=listInteira.get_Dado():
+                        listInteira=listInteira.get_Anterior()
+                        if(dado==listInteira.get_Dado()):
+                            print('Item consta na lista')
+                            dado=listInteira.get_Dado()
+                        elif(listInteira.get_Dado()==inicio.get_UltimoListaEnca()):
+                            print('Item não consta na lista')
+                            dado=listInteira.get_Dado()
+                    break
+                #print(inicio, '/ Dado: ',inicio.get_Dado(),' Assinatura: ',inicio.get_Assinatura(),' Aterior: ',inicio.get_Anterior(), 'Proximo: ', inicio.get_Proximo(),'\n')
             else:
                 inicio=inicio.get_Proximo()
 
-
-
     elif contro =='5':
-        #teste
+        break
+
+    elif contro =='6':
         list.inserir('12')
         list.inserir('22')
         list.inserir('10')
@@ -90,35 +106,18 @@ while contro !=4:
         list.inserir('5')
         list.inserir('14')
         list.inserir('17')
-        list.inserir('19')
-        list.inserir('23')
-        list.inserir('25')
-        list.inserir('32')
-        list.inserir('34')
-        list.inserir('38')
-        list.inserir('41')
-        list.inserir('43')
-        list.inserir('46')
-        list.inserir('50')
-        list.inserir('52')
-        list.inserir('58')
-        #break
-
-    elif contro =='6':
-        # Cria-se uma variavel atual, cont e elementos
-        atual = list2.get_Inicio()
-
-        print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-        atual = atual.get_Proximo()
-        print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-        atual = atual.get_Proximo()
-        print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-        atual = atual.get_Proximo()
-        print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-        atual = atual.get_Proximo()
-        print(atual, '/ Dado: ',atual.get_Dado(),' Aterior: ',atual.get_Anterior(), 'Proximo: ', atual.get_Proximo(),'\n')
-        atual = atual.get_Proximo()
-
+        #list.inserir('19')
+        #list.inserir('23')
+        #list.inserir('25')
+        #list.inserir('32')
+        #list.inserir('34')
+        #list.inserir('38')
+        #list.inserir('41')
+        #list.inserir('43')
+        #list.inserir('46')
+        #list.inserir('50')
+        #list.inserir('52')
+        #list.inserir('58')
     else:
         print ('Opcao invalida', contro)
         menu()

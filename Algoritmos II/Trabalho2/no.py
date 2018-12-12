@@ -3,6 +3,7 @@ class No(object):
         self.__dado = None
         self.__proximo = None
         self.__anterior = None
+        self.__assinatura = None
         self.__ultimoListaEnca=None
 
     def set_Dado(self, dado):
@@ -22,6 +23,12 @@ class No(object):
 
     def get_Anterior(self):
         return self.__anterior
+
+    def set_Assinatura(self, assinatura):
+        self.__assinatura = assinatura
+
+    def get_Assinatura(self):
+        return self.__assinatura
 
     def set_UltimoListaEnca(self, ultimoListaEnca):
         self.__ultimoListaEnca = ultimoListaEnca
